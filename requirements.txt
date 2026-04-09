@@ -3,3 +3,4 @@ flask-cors==4.0.1
 requests==2.32.3
 PyJWT==2.8.0
 cryptography==42.0.8
+gunicorn
