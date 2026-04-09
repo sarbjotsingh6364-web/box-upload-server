@@ -3,19 +3,26 @@ services:
     name: box-upload-server
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: python app.py
+    startCommand: gunicorn app:app
+
     envVars:
       - key: BOX_CLIENT_ID
         value: q2v4q1m4yq7qkn149l3vrf8hi6d8mzrx
+
       - key: BOX_CLIENT_SECRET
         value: AKssvX4W0K3nq79G845rG6vSsp3yTnNA
+
       - key: BOX_PUBLIC_KEY_ID
         value: f43yf8zj
+
       - key: BOX_PASSPHRASE
         value: 7834e3e416b5390d72e56600e59592ac
+
       - key: BOX_ENTERPRISE_ID
-        value: "0"
+        value: "REPLACE_WITH_REAL_ENTERPRISE_ID"
+
       - key: BOX_FOLDER_ID
         value: "375842438354"
+
       - key: BOX_PRIVATE_KEY
-        sync: false
+        value: "-----BEGIN ENCRYPTED PRIVATE KEY-----\nMIIFNTBfBgkqhkiG9w0BBQ0wUjAxBgkqhkiG9w0BBQwwJAQQs5fwtjrSy1i0Kt77\nqh5KtwICCAAwDAYIKoZIhvcNAgkFADAdBglghkgBZQMEASoEEC1uasobVrhqp8D8\n...PASTE FULL KEY HERE...\n-----END ENCRYPTED PRIVATE KEY-----\n"
